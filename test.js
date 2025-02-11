@@ -8,7 +8,7 @@ let getSumValue = (array, tar) => {
   for (i = 0; i < total; i++) {
     for (j = i + 1; j < total; j++) {
       let sum = arr[i] + arr[j];
-      if (sum == target) {
+      if (sum === tar) {
         map.push([i, j]);
       }
     }
