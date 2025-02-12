@@ -4,18 +4,18 @@ let target = 11;
 
 /* Need to find target value sum from array give me index */
 let map = {};
-let res = [];
+let getValue = [];
 let getSumValue = (array, tar) => {
   let total = array.length;
   for (i = 0; i < total; i++) {
     let complement = tar - arr[i];
     if (map[complement] !== undefined) {
-      res.push([map[complement], i]);
+      getValue.push([map[complement], i]);
     }
     map[array[i]] = i;
     //console.log(complement);
   }
-  return res ? res : "not found";
+  return getValue ? getValue : "not found";
 };
 
 let result = getSumValue(arr, target);
