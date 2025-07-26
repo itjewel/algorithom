@@ -3,25 +3,23 @@ package main
 import "fmt"
 
 var arr = []int{1, 7, 2, 3, 2, 3, 6}
-var targetNum = 9
+var target = 9
+var createMap = make(map[int]int)
 
-func findTargetValue() {
-	//fmt.Println("Array:", arr)
-	// HashMap approach: value -> index
-	numMap := make(map[int]int)
-
-	for i, num := range arr {
-		complement := targetNum - num
-		if idx, found := numMap[complement]; found {
-			fmt.Printf("Target %d found at indices: [%d, %d]\n", targetNum, idx, i)
+func TargetSumValue() {
+	//var result = [][]int{}
+	for i, value := range arr {
+		var current = target - value
+		if index, status := createMap[current]; status {
+			fmt.Printf("get result %d %d", index, i)
 			return
 		}
-		numMap[num] = i
+		createMap[value] = i
+		//if
 	}
-
-	fmt.Println("No two numbers found with the target sum.")
+	// fmt.Printf("Loop %d", result)
+	// fmt.Printf("Get Target vaue %d also get %d %d", target, arr, target)
 }
-
 func main() {
-	findTargetValue()
+	TargetSumValue()
 }
