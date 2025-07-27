@@ -6,15 +6,15 @@ var candies = [] int {2,3,5,1,3}
 var extraCandies = 3
 
 func LargeNumber() int{
-	var result = 0
+	var max = candies[0]
 	for _, candie := range candies {
-		if candie > result {
+		if candie > max {
 
-			result = candie
+			max = candie
 		}
 
 	}
-	return result
+	return max
 
 }
 func GreatestNumber() []bool{
