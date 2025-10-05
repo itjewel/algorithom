@@ -2,25 +2,14 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
-
-func ReverseString(str string) string {
-    arrayConveT := strings.Fields(str)
-    left, right := 0, len(arrayConveT)-1;
-
-    for left<right {
-        arrayConveT[left], arrayConveT[right] = arrayConveT[right], arrayConveT[left]
-        left++
-        right--
-    }
+func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
     
-    return strings.Join(arrayConveT," ")
-
 }
 
 func main(){
-    str := "This is a jewel farazi"
-    result := ReverseString(str)
-    fmt.Println("Reverse", result)
+    l1 := []int {2,7,11,15}
+    l2 := []int{7,0,8}
+    result:= addTwoNumbers(l1, l2)
+    fmt.Println(result)
 }
