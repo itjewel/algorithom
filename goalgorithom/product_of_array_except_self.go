@@ -1,4 +1,5 @@
 package main
+import "fmt"
 
 /*
 question: Product of Array Except Self
@@ -34,10 +35,25 @@ Array, Prefix Sum
 */
 
 func productExceptSelf(nums []int) []int {
+	n := len(nums)
+	answer := make([]int, n)
+	prefix := 1
+	for i:=0; i<n; i++{
+		answer[i] = prefix
+		prefix = nums[i] * prefix
+	}
+	
+	sufix :=1
+	for i:=n-1; i>=0; i--{
+		answer[i] = sufix*answer[i]
+		sufix = sufix * nums[i]
+	}
+	return answer
 
 }
 
 func main() {
 	nums := []int{1, 2, 3, 4}
-	productExceptSelf(nums)
+	result := productExceptSelf(nums)
+	fmt.Println(result)
 }

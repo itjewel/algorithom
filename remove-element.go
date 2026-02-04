@@ -4,8 +4,16 @@ import(
 )
 
 func removeElement(nums []int, val int) int {
-    fmt.Println("remove element")
-	return 0;
+    k := 0
+    for _, v := range nums {
+		if v != val {
+			nums[k] = v 
+			k++
+		}
+	}
+	fmt.Println(nums)
+	return k
+
 }
 	
 
