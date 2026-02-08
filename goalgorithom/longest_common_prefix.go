@@ -3,7 +3,7 @@ import "fmt"
 
 
 func longestCommonPrefix(strs []string) string {
-    if len(strs) == 0{
+    if len(strs) <= 0{
 		return ""
 	}
 	prefix := ""
